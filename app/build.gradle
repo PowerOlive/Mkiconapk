@@ -135,7 +135,7 @@ android {
     applicationVariants.all { variant ->
         variant.outputs.each { output ->
             if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
-                output.outputFile = file("${output.outputFile.parent}/materialize" +
+                output.outputFile = file("${output.outputFile.parent}/MkIconApk" +
                         "-${variant.buildType.name.toLowerCase()}" +
                         "-${variant.versionName}" +
                         "-${variant.flavorName.toLowerCase()}" +

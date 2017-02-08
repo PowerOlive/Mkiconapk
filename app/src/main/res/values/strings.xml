@@ -18,7 +18,7 @@
 
 <resources>
 
-    <string name="app_name">Materialize</string>
+    <string name="app_name">MkIconApk</string>
     <string name="app_name_debug" translatable="false">Materialize (debug)</string>
 
     <string name="search">Search</string>
