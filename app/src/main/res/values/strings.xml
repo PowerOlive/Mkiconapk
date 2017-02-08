@@ -1,0 +1,60 @@
+<!--
+  ~ Materialize - Materialize all those not material
+  ~ Copyright (C) 2015  XiNGRZ <xxx@oxo.ooo>
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="app_name">Materialize</string>
+    <string name="app_name_debug" translatable="false">Materialize (debug)</string>
+
+    <string name="search">Search</string>
+    <string name="search_hint">Search for app…</string>
+
+    <string name="about">About</string>
+    <string name="version" formatted="false">Version %s (%s)</string>
+    <string name="fork_me_on_github">Fork me on GitHub</string>
+    <string name="libraries_used">Libraries used</string>
+
+    <string name="update_available">New version %s is available</string>
+    <string name="update_confirm">Download Now</string>
+    <string name="update_cancel">Cancel</string>
+
+    <string name="adjust_label_shape">Shape</string>
+    <string name="adjust_label_padding">Padding</string>
+    <string name="adjust_label_color">Color</string>
+
+    <string name="shape_square">Square</string>
+    <string name="shape_round">Round</string>
+
+    <string name="color_white">White</string>
+    <string name="color_gradient">Auto fill</string>
+
+    <string name="adjust_install">Add to home</string>
+    <string name="adjust_save">Save</string>
+    <string name="adjust_cancel">Cancel</string>
+    <string name="adjust_export_gallery">Export to gallery</string>
+    <string name="adjust_reset">Reset</string>
+
+    <string name="re_add_to_home">Add to home again</string>
+
+    <string name="fail_stencil">Failed to load stencils</string>
+
+    <string name="toast_saved">Icon is saved</string>
+    <string name="toast_added_to_home">Icon is added to your home screen</string>
+    <string name="toast_exported_to_gallery">Icon is exported to your gallery</string>
+
+</resources>
