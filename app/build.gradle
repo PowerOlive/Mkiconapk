@@ -28,7 +28,7 @@ android {
     buildToolsVersion '23.0.2'
 
     defaultConfig {
-        applicationId "ooo.oxo.apps.materialize"
+        applicationId "com.gedoor.mkiconapk"
 
         minSdkVersion 15
 
