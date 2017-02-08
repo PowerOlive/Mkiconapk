@@ -17,7 +17,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ooo.oxo.apps.materialize">
+    package="com.gedoor.mkiconapk">
 
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
@@ -30,7 +30,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name=".MaterializeApplication"
+        android:name="com.gedoor.mkiconapk.MaterializeApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="${APP_NAME}"
@@ -50,11 +50,11 @@
             android:value="3c2e5d966debe118c74554c1fef5d7a3" />
 
         <meta-data
-            android:name="ooo.oxo.apps.materialize.io.DrawableGlideMode"
+            android:name="com.gedoor.apps.mkiconapk.io.DrawableGlideMode"
             android:value="GlideModule" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.gedoor.mkiconapk.MainActivity"
             android:screenOrientation="portrait">
 
             <intent-filter>
@@ -64,10 +64,10 @@
 
         </activity>
 
-        <activity android:name=".AboutActivity" />
+        <activity android:name="com.gedoor.mkiconapk.AboutActivity" />
 
         <activity
-            android:name=".AdjustActivity"
+            android:name="com.gedoor.mkiconapk.AdjustActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AdjustTheme" />
 

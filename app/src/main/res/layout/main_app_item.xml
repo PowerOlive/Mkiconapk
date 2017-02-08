@@ -23,7 +23,7 @@
 
         <variable
             name="app"
-            type="ooo.oxo.apps.materialize.AppInfo" />
+            type="com.gedoor.mkiconapk.AppInfo" />
 
     </data>
 
