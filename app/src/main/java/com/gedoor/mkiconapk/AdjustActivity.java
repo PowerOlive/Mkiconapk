@@ -221,8 +221,7 @@ public class AdjustActivity extends RxAppCompatActivity {
                     finishWithResult(RESULT_OK);
                 });
 
-        Observable<Boolean> permission = RxPermissions
-                .getInstance(this)
+        Observable<Boolean> permission = new RxPermissions(this)
                 .request(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 .doOnNext(RxMenuItem.enabled(menu.findItem(R.id.export_to_gallery)))
                 .filter(granted -> granted);
