@@ -59,10 +59,6 @@ public class AdjustActivity extends RxAppCompatActivity {
 
     private static final boolean SUPPORT_MIPMAP = Build.VERSION.SDK_INT >= 18;
 
-    /**
-     * Icon size in pixel since Android 4.3 (18) with mipmaps support
-     * It's the actual size of drawables in drawable-anydpi-v18 folder
-     */
     private static final int LAUNCHER_SIZE_MIPMAP = 192;
 
     private int index;

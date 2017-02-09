@@ -118,14 +118,7 @@ public class MainActivity extends RxAppCompatActivity
         intent.putExtra("index", index);
         intent.putExtra("activity", app.activityInfo);
 
-        int y = Build.VERSION.SDK_INT >= 23
-                ? (int) (getResources().getDisplayMetrics().heightPixels * 0.16f)
-                : 0;
-
-        ActivityOptionsCompat options = ActivityOptionsCompatCompat.makeClipRevealAnimation(
-                holder.itemView, 0, -y, holder.itemView.getWidth(), holder.itemView.getHeight());
-
-        ActivityCompat.startActivityForResult(this, intent, REQUEST_MAKE_ICON, options.toBundle());
+        startActivityForResult(intent,REQUEST_MAKE_ICON);
     }
 
     @Override

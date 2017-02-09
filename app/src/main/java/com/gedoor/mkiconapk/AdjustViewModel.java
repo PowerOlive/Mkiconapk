@@ -72,7 +72,7 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setInfinite(InfiniteDrawable infinite) {
         this.infinite = infinite;
-        notifyPropertyChanged(com.gedoor.mkiconapk.BR.infinite);
+        notifyPropertyChanged(BR.infinite);
     }
 
     @Bindable
@@ -82,8 +82,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setShape(CompositeDrawable.Shape shape) {
         this.shape = shape;
-        notifyPropertyChanged(com.gedoor.mkiconapk.BR.shape);
-        notifyPropertyChanged(com.gedoor.mkiconapk.BR.shapeRadioId);
+        notifyPropertyChanged(BR.shape);
+        notifyPropertyChanged(BR.shapeRadioId);
     }
 
     @Bindable
@@ -109,8 +109,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setPadding(float padding) {
         this.padding = padding;
-        notifyPropertyChanged(com.gedoor.mkiconapk.BR.padding);
-        notifyPropertyChanged(com.gedoor.mkiconapk.BR.paddingValue);
+        notifyPropertyChanged(BR.padding);
+        notifyPropertyChanged(BR.paddingValue);
 
         if (infinite != null) {
             infinite.setPadding(padding);
@@ -143,8 +143,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setBackground(Drawable background) {
         this.background = background;
-        notifyPropertyChanged(com.gedoor.mkiconapk.BR.background);
-        notifyPropertyChanged(com.gedoor.mkiconapk.BR.backgroundRadioId);
+        notifyPropertyChanged(BR.background);
+        notifyPropertyChanged(BR.backgroundRadioId);
     }
 
     @Bindable
