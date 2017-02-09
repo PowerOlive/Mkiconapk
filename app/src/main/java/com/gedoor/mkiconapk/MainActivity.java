@@ -69,11 +69,7 @@ public class MainActivity extends RxAppCompatActivity
      */
     private static Observable.Transformer<AppInfo, AppInfo> filterGoodGuys() {
         return observable -> observable
-                .filter(app -> !app.component.getPackageName().startsWith("com.android."))
-                .filter(app -> !app.component.getPackageName().startsWith("com.google."))
-                .filter(app -> !app.component.getPackageName().startsWith("org.cyanogenmod."))
-                .filter(app -> !app.component.getPackageName().startsWith("com.cyanogenmod."))
-                .filter(app -> !app.component.getPackageName().startsWith("me.xingrz."));
+                .filter(app -> !app.component.getPackageName().startsWith("org.cyanogenmod."));
     }
 
     @Override
@@ -104,7 +100,6 @@ public class MainActivity extends RxAppCompatActivity
                 .intentActivities(getPackageManager(), Intents.MAIN, 0)
                 .map(resolve -> AppInfo.from(resolve.activityInfo, getPackageManager(), iconCacheManager))
                 .filter(app -> app != null)
-                .filter(app -> !app.component.getPackageName().equals(BuildConfig.APPLICATION_ID))
                 .compose(filterGoodGuys())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

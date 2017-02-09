@@ -33,6 +33,7 @@
         android:name="com.gedoor.mkiconapk.MaterializeApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/round_launcher"
         android:label="${APP_NAME}"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -50,7 +51,7 @@
             android:value="3c2e5d966debe118c74554c1fef5d7a3" />
 
         <meta-data
-            android:name="com.gedoor.apps.mkiconapk.io.DrawableGlideMode"
+            android:name="com.gedoor.mkiconapk.io.DrawableGlideMode"
             android:value="GlideModule" />
 
         <activity

@@ -18,7 +18,7 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.gedoor.apps.mkiconapk.AdjustActivity">
+    tools:context="com.gedoor.mkiconapk.AdjustActivity">
 
     <group android:id="@+id/group_save">
 
