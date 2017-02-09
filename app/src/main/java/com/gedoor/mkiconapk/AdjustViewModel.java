@@ -1,21 +1,3 @@
-/*
- * Materialize - Materialize all those not material
- * Copyright (C) 2015  XiNGRZ <xxx@oxo.ooo>
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 package com.gedoor.mkiconapk;
 
 import android.databinding.BaseObservable;
@@ -72,7 +54,7 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setInfinite(InfiniteDrawable infinite) {
         this.infinite = infinite;
-        notifyPropertyChanged(BR.infinite);
+        notifyPropertyChanged(com.gedoor.mkiconapk.BR.infinite);
     }
 
     @Bindable
@@ -82,8 +64,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setShape(CompositeDrawable.Shape shape) {
         this.shape = shape;
-        notifyPropertyChanged(BR.shape);
-        notifyPropertyChanged(BR.shapeRadioId);
+        notifyPropertyChanged(com.gedoor.mkiconapk.BR.shape);
+        notifyPropertyChanged(com.gedoor.mkiconapk.BR.shapeRadioId);
     }
 
     @Bindable
@@ -109,8 +91,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setPadding(float padding) {
         this.padding = padding;
-        notifyPropertyChanged(BR.padding);
-        notifyPropertyChanged(BR.paddingValue);
+        notifyPropertyChanged(com.gedoor.mkiconapk.BR.padding);
+        notifyPropertyChanged(com.gedoor.mkiconapk.BR.paddingValue);
 
         if (infinite != null) {
             infinite.setPadding(padding);
@@ -143,8 +125,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public void setBackground(Drawable background) {
         this.background = background;
-        notifyPropertyChanged(BR.background);
-        notifyPropertyChanged(BR.backgroundRadioId);
+        notifyPropertyChanged(com.gedoor.mkiconapk.BR.background);
+        notifyPropertyChanged(com.gedoor.mkiconapk.BR.backgroundRadioId);
     }
 
     @Bindable
