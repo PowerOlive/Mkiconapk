@@ -20,10 +20,10 @@
 -keep class android.support.v7.widget.LinearLayoutManager { *; }
 
 # data binding
--keep class ooo.oxo.apps.materialize.databinding.** { *; }
+-keep class com.gedoor.mkiconapk.databinding.** { *; }
 
 # glide
--keep class ooo.oxo.apps.materialize.io.DrawableGlideMode { *; }
+-keep class com.gedoor.mkiconapk.io.DrawableGlideMode { *; }
 
 # realm
 -keep class io.realm.annotations.RealmModule
