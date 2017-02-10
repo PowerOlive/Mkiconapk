@@ -46,17 +46,6 @@ android {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
 
-    if (project.hasProperty('STOREFILE')) {
-        signingConfigs {
-            release {
-                storeFile file(STOREFILE)
-                storePassword STOREPASS
-                keyAlias KEYALIAS
-                keyPassword KEYPASS
-            }
-        }
-    }
-
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
@@ -68,7 +57,6 @@ android {
             shrinkResources true
 
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-
 
         }
     }
