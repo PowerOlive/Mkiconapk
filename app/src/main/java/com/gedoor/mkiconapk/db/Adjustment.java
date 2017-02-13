@@ -35,6 +35,10 @@ public class Adjustment extends RealmObject {
     public static final int SHAPE_ROUND_SCORE = 4;
 
     public static final int COLOR_WHITE = 0;
+    public static final int COLOR_BLACK = 2;
+    public static final int COLOR_YELLOW = 3;
+    public static final int COLOR_BLOW = 4;
+    public static final int COLOR_GREEN = 5;
     public static final int COLOR_INFINITE = 1;
 
     @PrimaryKey
@@ -95,7 +99,7 @@ public class Adjustment extends RealmObject {
     }
 
     @Retention(RetentionPolicy.SOURCE)
-    @IntDef({COLOR_WHITE, COLOR_INFINITE})
+    @IntDef({COLOR_WHITE, COLOR_BLACK, COLOR_BLOW, COLOR_GREEN, COLOR_YELLOW, COLOR_INFINITE})
     public @interface Color {
     }
 

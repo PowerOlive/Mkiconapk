@@ -17,6 +17,10 @@ import com.gedoor.mkiconapk.graphics.InfiniteDrawable;
 public class AdjustViewModel extends BaseObservable {
 
     private ColorDrawable white = new ColorDrawable(Color.WHITE);
+    private ColorDrawable black = new ColorDrawable(Color.BLACK);
+    private ColorDrawable yellow = new ColorDrawable(Color.YELLOW);
+    private ColorDrawable blow = new ColorDrawable(Color.BLUE);
+    private ColorDrawable green = new ColorDrawable(Color.GREEN);
 
     private InfiniteDrawable infinite;
 
@@ -219,6 +223,14 @@ public class AdjustViewModel extends BaseObservable {
         switch (radio) {
             case R.id.color_white:
                 return white;
+            case R.id.color_black:
+                return black;
+            case R.id.color_yellow:
+                return yellow;
+            case R.id.color_blow:
+                return blow;
+            case R.id.color_green:
+                return green;
             case R.id.color_infinite:
                 return infinite;
             default:
@@ -230,6 +242,14 @@ public class AdjustViewModel extends BaseObservable {
         switch (color) {
             case Adjustment.COLOR_WHITE:
                 return white;
+            case Adjustment.COLOR_BLACK:
+                return black;
+            case Adjustment.COLOR_BLOW:
+                return blow;
+            case Adjustment.COLOR_GREEN:
+                return green;
+            case Adjustment.COLOR_YELLOW:
+                return yellow;
             case Adjustment.COLOR_INFINITE:
                 return infinite;
             default:
@@ -241,6 +261,14 @@ public class AdjustViewModel extends BaseObservable {
     public int mapColorRadioId(Drawable color) {
         if (color == white) {
             return R.id.color_white;
+        } else if (color == black){
+            return R.id.color_black;
+        } else if (color == blow) {
+            return R.id.color_blow;
+        } else if (color == yellow) {
+            return R.id.color_yellow;
+        } else if (color == green) {
+            return R.id.color_green;
         } else if (color == infinite) {
             return R.id.color_infinite;
         } else {
@@ -252,6 +280,14 @@ public class AdjustViewModel extends BaseObservable {
     public int mapColorModelValue(Drawable color) {
         if (color == white) {
             return Adjustment.COLOR_WHITE;
+        } else if (color == black) {
+            return Adjustment.COLOR_BLACK;
+        } else if (color == yellow) {
+            return Adjustment.COLOR_YELLOW;
+        } else if (color == green) {
+            return Adjustment.COLOR_GREEN;
+        } else if (color == blow) {
+            return Adjustment.COLOR_BLOW;
         } else if (color == infinite) {
             return Adjustment.COLOR_INFINITE;
         } else {

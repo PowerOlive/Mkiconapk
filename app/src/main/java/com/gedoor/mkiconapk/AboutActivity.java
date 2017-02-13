@@ -47,6 +47,7 @@ public class AboutActivity extends AppCompatActivity {
         binding.toolbar.setNavigationOnClickListener(v -> supportFinishAfterTransition());
 
         libraries.put("romannurik / AndroidAssetStudio", "https://github.com/romannurik/AndroidAssetStudio");
+        libraries.put("oxoooo / materialize", "https://github.com/oxoooo/materialize");
 
         binding.libraries.setAdapter(new LibrariesAdapter());
     }
@@ -78,7 +79,7 @@ public class AboutActivity extends AppCompatActivity {
             } else {
                 ItemViewHolder itemHolder = (ItemViewHolder) holder;
                 if (position == 1) {
-                    itemHolder.binding.setName("oxoooo / materialize");
+                    itemHolder.binding.setName("gedoor / Mkiconapk");
                 } else {
                     itemHolder.binding.setName(libraries.keyAt(position - 3));
                 }
@@ -97,7 +98,7 @@ public class AboutActivity extends AppCompatActivity {
 
         private void handleItemClick(int position) {
             if (position == 1) {
-                open("https://github.com/oxoooo/materialize");
+                open("https://github.com/gedoor/Mkiconapk");
             } else {
                 open(libraries.valueAt(position - 3));
             }

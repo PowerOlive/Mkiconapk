@@ -25,210 +25,243 @@
         <import type="android.view.View" />
 
     </data>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:id="@+id/compose"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?colorPrimary"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="32dp">
-
-            <ImageView
-                android:id="@+id/icon"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@{transparency}"
-                app:imageBitmap="@{app.icon}"
-                tools:src="@mipmap/ic_launcher" />
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_margin="8dp"
-                android:alpha="0.3"
-                android:background="@drawable/ic_add_24dp" />
-
-            <com.gedoor.mkiconapk.widget.CompositeView
-                android:id="@+id/stencil"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@{transparency}"
-                app:canvasBackground="@{adjust.background}"
-                app:padding="@{adjust.padding}"
-                app:shape="@{adjust.shape}" />
-
-            <View
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_margin="8dp"
-                android:alpha="0.3"
-                android:background="@drawable/ic_arrow_forward_24dp" />
-
-            <com.gedoor.mkiconapk.widget.CompositeView
-                android:id="@+id/result"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@{transparency}"
-                app:canvasBackground="@{adjust.background}"
-                app:image="@{app.icon}"
-                app:padding="@{adjust.padding}"
-                app:shape="@{adjust.shape}" />
-
-        </LinearLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="16dp"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
-            android:paddingTop="16dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/compose"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/adjust_label_shape"
-                android:textAllCaps="true" />
+                android:background="?colorPrimary"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="32dp">
 
-            <RadioGroup
-                android:id="@+id/shape"
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@{transparency}"
+                    app:imageBitmap="@{app.icon}"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="8dp"
+                    android:alpha="0.3"
+                    android:background="@drawable/ic_add_24dp" />
+
+                <com.gedoor.mkiconapk.widget.CompositeView
+                    android:id="@+id/stencil"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@{transparency}"
+                    app:canvasBackground="@{adjust.background}"
+                    app:padding="@{adjust.padding}"
+                    app:shape="@{adjust.shape}" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="8dp"
+                    android:alpha="0.3"
+                    android:background="@drawable/ic_arrow_forward_24dp" />
+
+                <com.gedoor.mkiconapk.widget.CompositeView
+                    android:id="@+id/result"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@{transparency}"
+                    app:canvasBackground="@{adjust.background}"
+                    app:image="@{app.icon}"
+                    app:padding="@{adjust.padding}"
+                    app:shape="@{adjust.shape}" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:checkedButton="@{adjust.shapeRadioId}"
-                android:onCheckedChanged="@{adjust.shapeWatcher}"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:paddingTop="16dp">
 
-                <RadioButton
-                    android:id="@+id/shape_square"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp" />
-
-                <RadioButton
-                    android:id="@+id/shape_square_score"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp" />
-
-                <RadioButton
-                    android:id="@+id/shape_square_dog_ear"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp" />
-
-                <RadioButton
-                    android:id="@+id/shape_round"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp" />
-
-                <RadioButton
-                    android:id="@+id/shape_round_score"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_margin="4dp" />
-
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/adjust_label_padding"
-                android:textAllCaps="true" />
-
-            <SeekBar
-                android:id="@+id/padding"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:max="@{adjust.paddingMax}"
-                android:onProgressChanged="@{adjust.paddingWatcher}"
-                android:progress="@{adjust.paddingValue}" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/adjust_label_color"
-                android:textAllCaps="true" />
-
-            <RadioGroup
-                android:id="@+id/colors"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:checkedButton="@{adjust.backgroundRadioId}"
-                android:onCheckedChanged="@{adjust.backgroundWatcher}"
-                android:orientation="vertical">
-
-                <RadioButton
-                    android:id="@+id/color_white"
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:text="@string/color_white" />
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/adjust_label_shape"
+                    android:textAllCaps="true" />
 
-                <RadioButton
-                    android:id="@+id/color_infinite"
+                <RadioGroup
+                    android:id="@+id/shape"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="4dp"
-                    android:enabled="@{adjust.infinite != null}"
-                    android:text="@string/color_gradient" />
+                    android:layout_marginBottom="16dp"
+                    android:checkedButton="@{adjust.shapeRadioId}"
+                    android:onCheckedChanged="@{adjust.shapeWatcher}"
+                    android:orientation="horizontal">
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/shape_square"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp" />
+
+                    <RadioButton
+                        android:id="@+id/shape_square_score"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp" />
+
+                    <RadioButton
+                        android:id="@+id/shape_square_dog_ear"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp" />
+
+                    <RadioButton
+                        android:id="@+id/shape_round"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp" />
+
+                    <RadioButton
+                        android:id="@+id/shape_round_score"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="4dp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/adjust_label_padding"
+                    android:textAllCaps="true" />
+
+                <SeekBar
+                    android:id="@+id/padding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:max="@{adjust.paddingMax}"
+                    android:onProgressChanged="@{adjust.paddingWatcher}"
+                    android:progress="@{adjust.paddingValue}" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/adjust_label_color"
+                    android:textAllCaps="true" />
+
+                <RadioGroup
+                    android:id="@+id/colors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@{adjust.backgroundRadioId}"
+                    android:onCheckedChanged="@{adjust.backgroundWatcher}"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/color_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="@string/color_white" />
+
+                    <RadioButton
+                        android:id="@+id/color_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="@string/color_black" />
+
+                    <RadioButton
+                        android:id="@+id/color_yellow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="@string/color_yellow" />
+
+                    <RadioButton
+                        android:id="@+id/color_green"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="@string/color_green" />
+
+                    <RadioButton
+                        android:id="@+id/color_blow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:text="@string/color_blow" />
+
+                    <RadioButton
+                        android:id="@+id/color_infinite"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:enabled="@{adjust.infinite != null}"
+                        android:text="@string/color_gradient" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/DialogButtons">
+
+                <ImageButton
+                    android:id="@+id/more"
+                    style="@style/DialogButtons.Button"
+                    android:enabled="@{app != null}"
+                    android:minWidth="36dp"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp"
+                    android:src="@drawable/ic_more_vert_black_24dp" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/cancel"
+                    style="@style/DialogButtons.Button"
+                    android:text="@string/adjust_cancel" />
+
+                <Button
+                    android:id="@+id/install"
+                    style="@style/DialogButtons.Button"
+                    android:enabled="@{app != null}"
+                    android:text="@string/adjust_install"
+                    android:textColor="?colorPrimary"
+                    android:visibility="@{isNew ? View.VISIBLE : View.GONE}" />
+
+                <Button
+                    android:id="@+id/save"
+                    style="@style/DialogButtons.Button"
+                    android:enabled="@{app != null}"
+                    android:text="@string/adjust_save"
+                    android:textColor="?colorPrimary"
+                    android:visibility="@{isNew ? View.GONE : View.VISIBLE}" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout style="@style/DialogButtons">
-
-            <ImageButton
-                android:id="@+id/more"
-                style="@style/DialogButtons.Button"
-                android:enabled="@{app != null}"
-                android:minWidth="36dp"
-                android:paddingLeft="0dp"
-                android:paddingRight="0dp"
-                android:src="@drawable/ic_more_vert_black_24dp" />
-
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/cancel"
-                style="@style/DialogButtons.Button"
-                android:text="@string/adjust_cancel" />
-
-            <Button
-                android:id="@+id/install"
-                style="@style/DialogButtons.Button"
-                android:enabled="@{app != null}"
-                android:text="@string/adjust_install"
-                android:textColor="?colorPrimary"
-                android:visibility="@{isNew ? View.VISIBLE : View.GONE}" />
-
-            <Button
-                android:id="@+id/save"
-                style="@style/DialogButtons.Button"
-                android:enabled="@{app != null}"
-                android:text="@string/adjust_save"
-                android:textColor="?colorPrimary"
-                android:visibility="@{isNew ? View.GONE : View.VISIBLE}" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </layout>
