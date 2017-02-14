@@ -181,33 +181,7 @@
                         android:layout_margin="4dp"
                         android:text="@string/color_white" />
 
-                    <RadioButton
-                        android:id="@+id/color_black"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="@string/color_black" />
 
-                    <RadioButton
-                        android:id="@+id/color_yellow"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="@string/color_yellow" />
-
-                    <RadioButton
-                        android:id="@+id/color_green"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="@string/color_green" />
-
-                    <RadioButton
-                        android:id="@+id/color_blow"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="@string/color_blow" />
 
                     <RadioButton
                         android:id="@+id/color_infinite"

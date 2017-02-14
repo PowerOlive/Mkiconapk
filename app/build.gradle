@@ -140,4 +140,6 @@ dependencies {
     compile 'com.umeng.analytics:analytics:latest.integration'
 
     compile 'im.fir:sdk:latest.integration@aar'
+
+    compile 'petrov.kristiyan.colorpicker:colorpicker-library:1.1.2'
 }
