@@ -13,7 +13,6 @@
 
     <application
         android:name="com.gedoor.mkiconapk.MaterializeApplication"
-        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/round_launcher"
         android:label="${APP_NAME}"

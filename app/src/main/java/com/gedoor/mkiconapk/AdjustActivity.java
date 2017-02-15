@@ -35,6 +35,7 @@ import android.widget.Toast;
 
 import com.jakewharton.rxbinding.view.RxMenuItem;
 import com.jakewharton.rxbinding.view.RxView;
+import com.jrummyapps.android.colorpicker.ColorPickerDialog;
 import com.tbruyelle.rxpermissions.RxPermissions;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.umeng.analytics.MobclickAgent;
@@ -194,6 +195,11 @@ public class AdjustActivity extends RxAppCompatActivity {
                     return model;
                 });
 
+        RxView.clicks(binding.colorSelect)
+                .subscribe(aVoid -> {
+                    ColorPickerDialog.newBuilder().setColor(0xFFF44336).show(this);
+                });
+
         RxView.clicks(binding.save)
                 .compose(bindToLifecycle())
                 .zipWith(resolving, (avoid, app) -> app)
@@ -295,6 +301,7 @@ public class AdjustActivity extends RxAppCompatActivity {
         event.put("usage", usage);
         return event;
     }
+
 
     private String mapColorName(@IdRes int radio) {
         switch (radio) {

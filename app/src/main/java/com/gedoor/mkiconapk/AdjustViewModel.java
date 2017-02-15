@@ -26,6 +26,8 @@ public class AdjustViewModel extends BaseObservable {
 
     private Drawable background;
 
+    private ColorDrawable colorSelect = white;
+
     public AdjustViewModel() {
         reset();
     }
@@ -127,6 +129,12 @@ public class AdjustViewModel extends BaseObservable {
         this.background = background;
         notifyPropertyChanged(com.gedoor.mkiconapk.BR.background);
         notifyPropertyChanged(com.gedoor.mkiconapk.BR.backgroundRadioId);
+    }
+
+    @IdRes
+    @Bindable
+    public ColorDrawable getBackgroundSelect() {
+        return colorSelect;
     }
 
     @Bindable

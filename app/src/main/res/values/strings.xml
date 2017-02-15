@@ -27,6 +27,7 @@
     <string name="color_yellow">Yellow</string>
     <string name="color_blow">Blow</string>
     <string name="color_green">Green</string>
+    <string name="color_customize">Customize</string>
     <string name="color_gradient">Auto fill</string>
 
     <string name="adjust_install">Add to home</string>

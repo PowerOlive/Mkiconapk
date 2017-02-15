@@ -166,32 +166,45 @@
                     android:text="@string/adjust_label_color"
                     android:textAllCaps="true" />
 
-                <RadioGroup
-                    android:id="@+id/colors"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checkedButton="@{adjust.backgroundRadioId}"
-                    android:onCheckedChanged="@{adjust.backgroundWatcher}"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent">
 
-                    <RadioButton
-                        android:id="@+id/color_white"
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/color_select"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_margin="18dp"
+                        android:src="@{adjust.backgroundSelect}"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="#FF000000"/>
+
+                    <RadioGroup
+                        android:id="@+id/colors"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="@string/color_white" />
+                        android:checkedButton="@{adjust.backgroundRadioId}"
+                        android:onCheckedChanged="@{adjust.backgroundWatcher}"
+                        android:orientation="vertical">
 
+                        <RadioButton
+                            android:id="@+id/color_white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:text="@string/color_white" />
 
+                        <RadioButton
+                            android:id="@+id/color_infinite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp"
+                            android:enabled="@{adjust.infinite != null}"
+                            android:text="@string/color_gradient" />
 
-                    <RadioButton
-                        android:id="@+id/color_infinite"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:enabled="@{adjust.infinite != null}"
-                        android:text="@string/color_gradient" />
+                    </RadioGroup>
+                </LinearLayout>
 
-                </RadioGroup>
 
             </LinearLayout>
 
