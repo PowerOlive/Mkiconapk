@@ -142,5 +142,5 @@ dependencies {
     compile 'im.fir:sdk:latest.integration@aar'
 
     compile 'de.hdodenhof:circleimageview:2.1.0'
-    compile 'com.jrummyapps:colorpicker:2.0.5'
+    compile 'com.github.QuadFlask:colorpicker:0.0.13'
 }

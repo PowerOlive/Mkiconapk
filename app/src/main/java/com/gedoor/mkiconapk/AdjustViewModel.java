@@ -26,7 +26,7 @@ public class AdjustViewModel extends BaseObservable {
 
     private Drawable background;
 
-    private ColorDrawable colorSelect = white;
+    private ColorDrawable colorSelect;
 
     public AdjustViewModel() {
         reset();
@@ -36,6 +36,7 @@ public class AdjustViewModel extends BaseObservable {
         setShape(CompositeDrawable.Shape.SQUARE);
         setPadding(0);
         setBackground(white);
+        setCustomizeColor(white);
     }
 
     public void applyFromModel(Adjustment model) {
@@ -130,6 +131,18 @@ public class AdjustViewModel extends BaseObservable {
         notifyPropertyChanged(com.gedoor.mkiconapk.BR.background);
         notifyPropertyChanged(com.gedoor.mkiconapk.BR.backgroundRadioId);
     }
+
+    public void setCustomizeColor(int color) {
+        setCustomizeColor(new ColorDrawable(color));
+    }
+    public void setCustomizeColor(ColorDrawable color) {
+        this.colorSelect = color;
+        notifyPropertyChanged(BR.backgroundSelect);
+    }
+    public ColorDrawable getCustomizeColor() {
+        return this.colorSelect;
+    }
+
 
     @IdRes
     @Bindable

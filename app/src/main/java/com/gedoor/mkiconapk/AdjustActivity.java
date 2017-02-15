@@ -19,6 +19,7 @@
 package com.gedoor.mkiconapk;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.databinding.DataBindingUtil;
@@ -33,9 +34,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.flask.colorpicker.ColorPickerView;
+import com.flask.colorpicker.OnColorSelectedListener;
+import com.flask.colorpicker.builder.ColorPickerClickListener;
+import com.flask.colorpicker.builder.ColorPickerDialogBuilder;
 import com.jakewharton.rxbinding.view.RxMenuItem;
 import com.jakewharton.rxbinding.view.RxView;
-import com.jrummyapps.android.colorpicker.ColorPickerDialog;
 import com.tbruyelle.rxpermissions.RxPermissions;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import com.umeng.analytics.MobclickAgent;
@@ -52,6 +56,7 @@ import com.gedoor.mkiconapk.graphics.TransparencyDrawable;
 import com.gedoor.mkiconapk.io.IconCacheManager;
 import com.gedoor.mkiconapk.io.PublicIconManager;
 import com.gedoor.mkiconapk.util.LauncherUtil;
+
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -197,7 +202,24 @@ public class AdjustActivity extends RxAppCompatActivity {
 
         RxView.clicks(binding.colorSelect)
                 .subscribe(aVoid -> {
-                    ColorPickerDialog.newBuilder().setColor(0xFFF44336).show(this);
+                    ColorPickerDialogBuilder
+                            .with(this)
+                            .setTitle("Choose color")
+                            .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
+                            .density(12)
+                            .setPositiveButton("ok", new ColorPickerClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                                    viewModel.setCustomizeColor(selectedColor);
+                                }
+                            })
+                            .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .build()
+                            .show();
                 });
 
         RxView.clicks(binding.save)

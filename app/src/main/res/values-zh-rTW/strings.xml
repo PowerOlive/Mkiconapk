@@ -22,10 +22,7 @@
     <string name="shape_round">圓形</string>
 
     <string name="color_white">白色</string>
-    <string name="color_black">黑色</string>
-    <string name="color_yellow">黄色</string>
-    <string name="color_blow">蓝色</string>
-    <string name="color_green">绿色</string>
+    <string name="color_customize">自定义</string>
     <string name="color_gradient">智能填充</string>
 
     <string name="adjust_install">添加到主屏幕</string>

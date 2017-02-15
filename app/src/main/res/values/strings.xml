@@ -23,10 +23,6 @@
     <string name="shape_round">Round</string>
 
     <string name="color_white">White</string>
-    <string name="color_black">Black</string>
-    <string name="color_yellow">Yellow</string>
-    <string name="color_blow">Blow</string>
-    <string name="color_green">Green</string>
     <string name="color_customize">Customize</string>
     <string name="color_gradient">Auto fill</string>
 
