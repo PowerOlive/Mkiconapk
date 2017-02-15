@@ -25,6 +25,7 @@ import android.content.pm.ActivityInfo;
 import android.databinding.DataBindingUtil;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -210,7 +211,7 @@ public class AdjustActivity extends RxAppCompatActivity {
                             .setPositiveButton("ok", new ColorPickerClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
-                                    viewModel.setCustomizeColor(selectedColor);
+                                    viewModel.setCustomizeColor(new ColorDrawable(selectedColor));
                                 }
                             })
                             .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
@@ -327,8 +328,8 @@ public class AdjustActivity extends RxAppCompatActivity {
 
     private String mapColorName(@IdRes int radio) {
         switch (radio) {
-            case R.id.color_white:
-                return "white";
+            case R.id.color_customize:
+                return "customize";
             case R.id.color_infinite:
                 return "infinite";
             default:

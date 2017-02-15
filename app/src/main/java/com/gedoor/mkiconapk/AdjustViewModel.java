@@ -33,10 +33,10 @@ public class AdjustViewModel extends BaseObservable {
     }
 
     public void reset() {
+        colorSelect = white;
         setShape(CompositeDrawable.Shape.SQUARE);
         setPadding(0);
         setBackground(white);
-        setCustomizeColor(white);
     }
 
     public void applyFromModel(Adjustment model) {
@@ -47,7 +47,7 @@ public class AdjustViewModel extends BaseObservable {
 
     @Bindable
     public ColorDrawable getWhite() {
-        return white;
+        return colorSelect;
     }
 
     @Bindable
@@ -130,6 +130,7 @@ public class AdjustViewModel extends BaseObservable {
         this.background = background;
         notifyPropertyChanged(com.gedoor.mkiconapk.BR.background);
         notifyPropertyChanged(com.gedoor.mkiconapk.BR.backgroundRadioId);
+        notifyPropertyChanged(BR.backgroundSelect);
     }
 
     public void setCustomizeColor(int color) {
@@ -137,16 +138,16 @@ public class AdjustViewModel extends BaseObservable {
     }
     public void setCustomizeColor(ColorDrawable color) {
         this.colorSelect = color;
-        notifyPropertyChanged(BR.backgroundSelect);
+        setBackground(color);
     }
-    public ColorDrawable getCustomizeColor() {
+    public Drawable getCustomizeColor() {
         return this.colorSelect;
     }
 
 
     @IdRes
     @Bindable
-    public ColorDrawable getBackgroundSelect() {
+    public Drawable getBackgroundSelect() {
         return colorSelect;
     }
 
@@ -238,8 +239,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public Drawable mapColor(@IdRes int radio) {
         switch (radio) {
-            case R.id.color_white:
-                return white;
+            case R.id.color_customize:
+                return colorSelect;
             case R.id.color_infinite:
                 return infinite;
             default:
@@ -249,8 +250,8 @@ public class AdjustViewModel extends BaseObservable {
 
     public Drawable mapColorFromModel(@Adjustment.Color int color) {
         switch (color) {
-            case Adjustment.COLOR_WHITE:
-                return white;
+            case Adjustment.COLOR_CUSTOMIZE:
+                return colorSelect;
             case Adjustment.COLOR_INFINITE:
                 return infinite;
             default:
@@ -260,23 +261,19 @@ public class AdjustViewModel extends BaseObservable {
 
     @IdRes
     public int mapColorRadioId(Drawable color) {
-        if (color == white) {
-            return R.id.color_white;
-        } else if (color == infinite) {
+        if (color == infinite) {
             return R.id.color_infinite;
         } else {
-            return View.NO_ID;
+            return R.id.color_customize;
         }
     }
 
     @Adjustment.Color
     public int mapColorModelValue(Drawable color) {
-        if (color == white) {
-            return Adjustment.COLOR_WHITE;
-        } else if (color == infinite) {
+        if (color == infinite) {
             return Adjustment.COLOR_INFINITE;
         } else {
-            throw new IllegalArgumentException();
+            return Adjustment.COLOR_CUSTOMIZE;
         }
     }
 
