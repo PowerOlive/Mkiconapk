@@ -208,17 +208,10 @@ public class AdjustActivity extends RxAppCompatActivity {
                             .setTitle("Choose color")
                             .wheelType(ColorPickerView.WHEEL_TYPE.FLOWER)
                             .density(12)
-                            .setPositiveButton("ok", new ColorPickerClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int selectedColor, Integer[] allColors) {
+                            .setPositiveButton("ok",(DialogInterface dialog, int selectedColor, Integer[] allColors)-> {
                                     viewModel.setCustomizeColor(new ColorDrawable(selectedColor));
-                                }
                             })
-                            .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                }
-                            })
+                            .setNegativeButton("cancel",(DialogInterface dialog, int which)-> {})
                             .build()
                             .show();
                 });

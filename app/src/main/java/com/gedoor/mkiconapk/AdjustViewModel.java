@@ -144,7 +144,6 @@ public class AdjustViewModel extends BaseObservable {
         return this.colorSelect;
     }
 
-
     @IdRes
     @Bindable
     public Drawable getBackgroundSelect() {
